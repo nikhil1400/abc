@@ -1,0 +1,43 @@
+Installation procedure:
+------------------------
+
+Please refer to READMEs in the folder corresponding to each OS inside
+Pre-requisites folder.
+
+Running the tool:
+-----------------
+
+1. Populate BOOT2_IMG and MCUFW_IMG variables in .config file with the
+   complete path to boot2 binary and application firmware binary respectively.
+   Example config file is present inside sample-data folder.
+
+2. Set MFG_ENCRYPT to 1 in the .config file if encryption of mfg partition is
+   desired.
+
+3. Run gen_keys.js to generate random encryption keys using below command
+
+   $ node gen_keys.js [--count <no of keys to be generated> --db <csv outfile name>]
+
+4. Run gen_keypair.js to generate random public-private keypair using below
+   command
+
+   $ node gen_keypair.js [--outdir <output dir> --count <no. of keypairs to be generated> --db <CSV output>]
+
+5. Populate your csv file with all your encryption keys and keypairs generated
+   in the above stages. Example csv files are present inside sample-data folder.
+
+6. Run mfg-creator.js using below command.
+
+   $ mkdir -p out
+   $ node mfg-creator.js --db <CSV file> [--from <from line> --to <to line>] --cfg <config file> --outdir out
+
+NOTE: Run below utilities only if you are NOT using flashprog tool to flash binaries onto the board.
+
+7. Run gen_layout.js to generate layout.bin using the command given below
+
+   $ node gen_layout.js --inf <input file> [--outf <output file>]
+
+8. Run gen_wifi.js to generate flashable wifi firmware using below command
+
+   $ node gen_wifi_fw.js --inf <input file> [--outf <output file>]
+

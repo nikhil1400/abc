@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - '0.10'
+  - '0.12'
+  - 'iojs-v1.3'
+  - 'iojs-v2.3'
+
+sudo: false
+
+before_install:
+  - npm install -g npm@latest
+  - npm install -g grunt-cli
+install:
+  - npm install
+
