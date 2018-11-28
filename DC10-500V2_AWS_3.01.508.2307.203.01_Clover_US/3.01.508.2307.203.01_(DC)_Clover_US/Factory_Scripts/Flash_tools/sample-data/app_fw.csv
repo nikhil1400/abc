@@ -1,0 +1,5 @@
+serial_no,fwupg_encrypt_decrypt_key,fwupg_verification_key,homekit.pin,MAC,prov.pin,mcufw_encryption_algo,mcufw_encryption_key,mcufw_nonce,mcufw_sign_algo,mcufw_hash_algo,mcufw_public_key,mcufw_private_key
+483845878,4052bfad409d8f05c6946808594d80b31b826c57ddd7be0941ec1afbf8d0f023,9a5425d1d2328c1bf27726c7de317de36479fd899f5f49ed384eebb7bfec208a,618-01-678,40:E2:30:1A:C3:31,618-01-678,AES_CTR_128_ENCRYPT,2b7e151628aed2a6abf7158809cf4f3c,ec858b1c4b8b36deaa5504185dd8db89,RSA_SIGN,SHA256_HASH,sample-data/mcufw-pubKey.pem,sample-data/mcufw-prvKey.pem
+
+
+

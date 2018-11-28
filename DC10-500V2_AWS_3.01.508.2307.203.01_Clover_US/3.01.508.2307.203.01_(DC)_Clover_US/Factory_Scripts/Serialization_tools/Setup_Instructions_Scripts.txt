@@ -1,0 +1,105 @@
+Python Set-Up- With python installed the necessary modules must be installed to be able to run the scripts.
+
+1.  Install Requests python module.  From terminal install by writing pip install requests.
+
+2.  Install Pycrypto python module.  From terminal install by writing pip install pycrypto.
+
+If installation fails or for more information visit http://docs.pythonrequests.org/en/latest/user/install/
+
+Setting Up Scripting Environment:
+
+1.  With the following repository cloned to your desktop (((INSERT REPSOITORY LINK))).
+
+2.  From the terminal run ConfigManager.py file from the terminal.  The python command is python ConfigManager.py.
+
+2(A). From the terminal run WiFi.py.  Input the Wi-Fi credentials that will be used for the device.  The Wi-Fi credentials are written to a text file and later passed to the scripts.
+
+3.  Follow the step by step prompts using the following information for the portal and admin api:
+   Currently the endpoints for the exostie are:
+      PORTAL API - https://jssdev.exosite.com
+   ADMIN API - https://jssdev.m2.exosite.com
+	
+		How To Find API Key:
+1. Log into Exosite
+2. Navigate to the admin home
+3. Listed on the home admin screen, on the right side panel
+
+      Run: generateConfig.py generates an encrypted config file.
+      Terminal command generateConfig.py follow command directions.
+
+You must run WiFi.py first in which you will input the WiFi credentials that will be used to run the script. 
+
+4.  You can now begin to provision the device.  
+The Exosite Portal, SSID and Wi-Fi password must be hardcoded in the script.  The model and the vendor will be read from the pic, which has already been programmed.  To provision and add the device to the user portal run Create_Device_Serial.py.  In terminal run python Create_Device_Serial.py. 
+
+Error Codes:
+Provisioning the Device:
+205 = Success
+404 = Not Found
+
+Adding the Device To the User Portal:
+201 = Created
+403 = Forbidden
+404 = Not Found
+A Successful Event Log will read:
+
+
+1. Nicks-MacBook-Pro:scripts nickwiatrak$ python          
+   Create_Device_Serial.py
+
+2.  /dev/tty.usbserial-FTF6CS19
+
+3.  Sending RM to PIC
+    DC10-500
+
+4.  Sending RV to PIC
+    jssdev
+
+5.  Provisionsing the Device
+    205
+
+6.  Adding the Device to the User Portal
+    201
+
+7.  Sending WS to PIC
+    B5D6D2015FCE4F3284E9553801B69AA7
+
+8.  Sending WK to PIC
+    7CF0EBFBBEBD470D64F904BCB6934833
+
+9.  Sending WA to PIC
+    17D6CAB3FA84FE84AB429EE01C41FDD7
+
+10. Sending WI to PIC
+    soto1
+
+11. Sending WP to PIC
+    valdorian
+
+12. Done
+
+Line Numbers Explained:
+1.  Initial command to Run Script
+2.  Prints out the serial port that was written to
+3.  Reads model from Pic and prints out the model received
+4.  Reads vendor from Pic and prints out the vendor received
+5.  Provisions the device and prints out response codes
+6.  Adds the device to the user portal prints out response codes
+7.  Writes the Serial Number to the Pic and prints out serial number
+8.  Writes the cryptokey to the pic and prints out serial number 
+9.  Writes accesskey tot the pic and prints out accesskey
+10. Sets Wi-Fi SSID and prints out Wi-Fi SSID
+11. Sets Wi-Fi Password and prints out Password
+12.  Prints Done upon completion of the Script. 
+
+Device Status Script:  This Script will change the device name in the cloud and will read the status of the device as activated or Serial Number not registered.
+
+
+
+
+
+
+
+
+
+
